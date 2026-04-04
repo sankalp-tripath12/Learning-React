@@ -5,7 +5,7 @@ function App() {
   const [counter, setCounter] = useState(15)
 
   const addValue = () => {
-    setCounter(counter+1)
+    setCounter(prevcounter=>prevcounter+1)
   }
 
   const removeValue = () => {

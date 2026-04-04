@@ -2,31 +2,32 @@ import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
+// Custom component
+function MyApp() {
+  return (
+    <div>
+      <h1>Custom App</h1>
+    </div>
+  )
+}
 
-
-
-// const reactElement={
-//     type:"a",
-//     props:{
-//         href:"href://google.com",
-//         target: "_blank"
-
-//     },
-//     Children: "lick me to visit google"
-// }
-
+// JSX element
 const anotherElement = (
-  <a href="https://google.com" target="_blank">Visit Google</a>
+  <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+    Visit Google
+  </a>
 )
 
+// React.createElement version
 const reactElement = React.createElement(
   'a',
-  { href: "https://google.com", target: "_blank" },
+  { href: "https://google.com", target: "_blank", rel: "noopener noreferrer" },
   'Click me to visit Google'
 )
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-)(
-  reactElement
+// Render
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    {reactElement}
+  </StrictMode>
 )
